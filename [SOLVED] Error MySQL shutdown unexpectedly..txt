@@ -1,0 +1,29 @@
+12:19:12 PM [mysql] Attempting to start MySQL app...
+12:19:12 PM [mysql] Status change detected: running
+12:19:13 PM [mysql] Status change detected: stopped
+12:19:13 PM [mysql] Error: MySQL shutdown unexpectedly.
+12:19:13 PM [mysql] This may be due to a blocked port, missing dependencies,
+12:19:13 PM [mysql] improper privileges, a crash, or a shutdown by another method
+12:19:13 PM [mysql] Press the Logs button to view error logs and check
+12:19:13 PM [mysql] the Windows Event Viewer for more clues
+12:19:13 PM [mysql] If you need more help, copy and post this
+12:19:13 PM [mysql] entire log window on the forums
+Error solve! withoutloosing db
+
+
+To solve this problem
+
+Step 1. Rename the folder c:\xampp\mysql\data to c:\xampp\mysql\data_old (you can use any name).
+
+Step 2. Create a new folder c:\xampp\mysql/data.
+
+Step 3. Copy the content that resides in mysql\backup to the new mysql\data folder.
+
+Step 4. Copy all your database folders that are in mysql\data_old to mysql\data (skipping the mysql, performance_schema, and phpmyadmin folders from data_old).
+
+Step 5. Finally copy the ibdata1 file from mysql\data_old and replace it inside mysql\data folder.
+
+Step 6. Start MySQL from XAMPP control panel.
+
+And, Its DONE . No databases lost, no ports changed, no run as administrator, no force recovery, no kill mysqld process, no restoring from previous versions, no more errors.
+
